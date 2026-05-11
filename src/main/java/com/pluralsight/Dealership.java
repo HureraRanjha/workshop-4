@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -43,39 +44,87 @@ public class Dealership
         this.phone = phone;
     }
 
-    public Vehicle[] getVehiclesByPrice(int min, int max)
+    public ArrayList<Vehicle> getVehiclesByPrice(int min, int max)
     {
-        return null;
+        ArrayList<Vehicle> filteredVehicles = new ArrayList<>();
+        for(Vehicle v: inventory)
+        {
+            if(v.getPrice() > min && v.getPrice() < max)
+            {
+                filteredVehicles.add(v);
+            }
+        }
+        return filteredVehicles;
     }
 
-    public Vehicle[] getVehiclesByMakeModel(String make, String model)
+    public ArrayList<Vehicle> getVehiclesByMakeModel(String make, String model)
     {
-        return null;
+        ArrayList<Vehicle> filteredVehicles = new ArrayList<>();
+        for(Vehicle v: inventory)
+        {
+            if(v.getMake().equals(make) && v.getModel().equals(model))
+            {
+                filteredVehicles.add(v);
+            }
+        }
+        return filteredVehicles;
     }
 
-    public Vehicle[] getVehiclesByYear(int min, int max)
+    public ArrayList<Vehicle> getVehiclesByYear(int min, int max)
     {
-        return null;
+        ArrayList<Vehicle> filteredVehicles = new ArrayList<>();
+        for(Vehicle v: inventory)
+        {
+            if(v.getYear() > min && v.getYear() < max)
+            {
+                filteredVehicles.add(v);
+            }
+        }
+        return filteredVehicles;
     }
 
-    public Vehicle[] getVehiclesByColor(String color)
+    public ArrayList<Vehicle> getVehiclesByColor(String color)
     {
-        return null;
+        ArrayList<Vehicle> filteredVehicles = new ArrayList<>();
+        for(Vehicle v: inventory)
+        {
+            if(v.getColor().equals(color) )
+            {
+                filteredVehicles.add(v);
+            }
+        }
+        return filteredVehicles;
     }
 
-    public Vehicle[] getVehiclesByMileage(int min, int max)
+    public ArrayList<Vehicle> getVehiclesByMileage(int min, int max)
     {
-        return null;
+        ArrayList<Vehicle> filteredVehicles = new ArrayList<>();
+        for(Vehicle v: inventory)
+        {
+            if(v.getOdometer() > min && v.getOdometer() < max)
+            {
+                filteredVehicles.add(v);
+            }
+        }
+        return filteredVehicles;
     }
 
-    public Vehicle[] getVehiclesByType(String vehicleType)
+    public ArrayList<Vehicle> getVehiclesByType(String vehicleType)
     {
-        return null;
+        ArrayList<Vehicle> filteredVehicles = new ArrayList<>();
+        for(Vehicle v: inventory)
+        {
+            if(v.getVehicleType().equals(vehicleType))
+            {
+                filteredVehicles.add(v);
+            }
+        }
+        return filteredVehicles;
     }
 
     public ArrayList<Vehicle> getAllVehicles()
     {
-        return inventory;
+        return new ArrayList<>(inventory);
     }
 
     public void addVehicle(Vehicle vehicle)
