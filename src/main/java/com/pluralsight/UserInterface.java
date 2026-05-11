@@ -71,26 +71,91 @@ public class UserInterface
 
     private void processGetByPriceRequest()
     {
+        int min = 0;
+        int max = 0;
+        String userInput;
+
+        System.out.println("What is the minimum price: ");
+        if(!(userInput = scanner.nextLine()).isEmpty() )  min = Integer.parseInt(userInput);
+
+        System.out.println("What is the maximum price: ");
+        if(!(userInput = scanner.nextLine()).isEmpty() )  max = Integer.parseInt(userInput);
+
+        ArrayList<Vehicle> vehicles = dealership.getVehiclesByPrice(min, max);
+
+        displayVehicles(vehicles);
+
     }
 
     private void processGetByMakeModelRequest()
     {
+        System.out.println("What is the make of the car: ");
+        String make = scanner.nextLine();
+
+        System.out.println("What is the model of the car: ");
+        String model = scanner.nextLine();
+
+        ArrayList<Vehicle> vehicles = dealership.getVehiclesByMakeModel(make, model);
+
+        displayVehicles(vehicles);
     }
 
     private void processGetByYearRequest()
     {
+        int min = 0;
+        int max = 0;
+        String userInput;
+
+        System.out.println("What is the minimum year: ");
+        if(!(userInput = scanner.nextLine()).isEmpty() )  min = Integer.parseInt(userInput);
+
+        System.out.println("What is the maximum year: ");
+        if(!(userInput = scanner.nextLine()).isEmpty() )  max = Integer.parseInt(userInput);
+
+        ArrayList<Vehicle> vehicles = dealership.getVehiclesByYear(min, max);
+
+        displayVehicles(vehicles);
+
     }
 
     private void processGetByColorRequest()
     {
+        System.out.println("What is the color you want: ");
+        String color = scanner.nextLine();
+
+        ArrayList<Vehicle> vehicles = dealership.getVehiclesByColor(color);
+
+        displayVehicles(vehicles);
+
     }
 
     private void processGetByMileageRequest()
     {
+        int min = 0;
+        int max = 0;
+        String userInput;
+
+        System.out.println("What is the minimum mileage: ");
+        if(!(userInput = scanner.nextLine()).isEmpty() )  min = Integer.parseInt(userInput);
+
+        System.out.println("What is the maximum mileage: ");
+        if(!(userInput = scanner.nextLine()).isEmpty() )  max = Integer.parseInt(userInput);
+
+        ArrayList<Vehicle> vehicles = dealership.getVehiclesByMileage(min, max);
+
+        displayVehicles(vehicles);
+
     }
 
     private void processGetByVehicleTypeRequest()
     {
+        System.out.println("What is the vehicle type you want: ");
+        String type = scanner.nextLine();
+
+        ArrayList<Vehicle> vehicles = dealership.getVehiclesByType(type);
+
+        displayVehicles(vehicles);
+
     }
 
 //    private void processGetAllVehiclesRequest()
@@ -115,7 +180,7 @@ public class UserInterface
     {
         for(Vehicle v: vehicles)
         {
-            System.out.printf("%d %d, %s %s %s %s %d %f \n",
+            System.out.printf("%d %d, %s %s %s %s %d %.2f \n",
                     v.getVin(), v.getYear(), v.getMake(), v.getModel(), v.getVehicleType(), v.getColor(), v.getOdometer(), v.getPrice());
         }
     }
