@@ -75,9 +75,7 @@ public class Dealership
 
     public ArrayList<Vehicle> getAllVehicles()
     {
-        ArrayList<Vehicle> inventoryCopy = new ArrayList<>();
-        Collections.copy(inventory, inventoryCopy);
-        return inventoryCopy;
+        return inventory;
     }
 
     public void addVehicle(Vehicle vehicle)
