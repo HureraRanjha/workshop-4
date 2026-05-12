@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -164,10 +165,62 @@ public class UserInterface
 
     private void processAddVehicleRequest()
     {
+        System.out.println("What type of vehicle do you want to add: ");
+        System.out.println("What is the vin: ");
+        int vin = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("What is the year: ");
+        int year = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("What is the make: ");
+        String make = scanner.nextLine();
+
+        System.out.println("What is the model: ");
+        String model = scanner.nextLine();
+
+        System.out.println("What is the vehicle type: ");
+        String vehicleType = scanner.nextLine();
+
+        System.out.println("What is the color: ");
+        String color = scanner.nextLine();
+
+        System.out.println("What is the odometer: ");
+        int odometer = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("What is the price: ");
+        double price = Double.parseDouble(scanner.nextLine());
+
+        dealership.addVehicle(new Vehicle(vin, year, make, model, vehicleType, color, odometer, price));
     }
 
     private void processRemoveVehicleRequest()
     {
+        System.out.println("What type of vehicle do you want to add: ");
+        System.out.println("What is the vin: ");
+        int vin = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("What is the year: ");
+        int year = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("What is the make: ");
+        String make = scanner.nextLine();
+
+        System.out.println("What is the model: ");
+        String model = scanner.nextLine();
+
+        System.out.println("What is the vehicle type: ");
+        String vehicleType = scanner.nextLine();
+
+        System.out.println("What is the color: ");
+        String color = scanner.nextLine();
+
+        System.out.println("What is the odometer: ");
+        int odometer = Integer.parseInt(scanner.nextLine());
+
+        System.out.println("What is the price: ");
+        double price = Double.parseDouble(scanner.nextLine());
+
+        dealership.removeVehicle(new Vehicle(vin, year, make, model, vehicleType, color, odometer, price));
     }
 
     private void init()
